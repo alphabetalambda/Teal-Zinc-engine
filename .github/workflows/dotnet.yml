@@ -21,11 +21,13 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: cd ./Teal-Zinc-engine
+      working-directory: ./Teal-Zinc-engine
       run: dotnet restore
     - name: Build
+      working-directory: ./Teal-Zinc-engine
       run: dotnet build --no-restore
     - name: Test
+      working-directory: ./Teal-Zinc-engine
       run: dotnet test --no-build --verbosity normal
 
 
